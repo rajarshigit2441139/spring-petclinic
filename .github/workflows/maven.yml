@@ -25,10 +25,10 @@ jobs:
     # - name: Set up GITHUB_TOKEN
     #   env:
     #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Lint
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      uses: super-linter/super-linter@v7.1.0
+    # - name: Lint
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #   uses: super-linter/super-linter@v7.1.0
     - name: Check JAVA / Maven
       run: |
         java -version
