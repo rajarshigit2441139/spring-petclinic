@@ -12,6 +12,8 @@ name: Java CI with Maven
 on:
   push:
   pull_request:
+      branches:
+        - main
     
 
 jobs:
@@ -20,9 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Super-Linter
-    - uses: super-linter/super-linter@v7.1.0
-    - name: Check JAVA / npm Maven
+    - name: Lint
+      uses: super-linter/super-linter@v7.1.0
+    - name: Check JAVA / Maven
       run: |
         java -version
         mvn -v
