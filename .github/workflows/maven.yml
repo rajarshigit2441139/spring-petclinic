@@ -22,10 +22,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Set up GITHUB_TOKEN
+    # - name: Set up GITHUB_TOKEN
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Lint
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Lint
       uses: super-linter/super-linter@v7.1.0
     - name: Check JAVA / Maven
       run: |
