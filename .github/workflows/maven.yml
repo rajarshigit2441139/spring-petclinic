@@ -5,6 +5,7 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
+#RAJ
 
 name: Java CI with Maven
 
@@ -14,10 +15,20 @@ on:
     
 
 jobs:
-  build:
-
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
-
+    steps:
+    - uses: actions/checkout@v4
+    - name: Super-Linter
+    - uses: super-linter/super-linter@v7.1.0
+    - name: Check JAVA / npm Maven
+      run: |
+        java -version
+        mvn -v
+    
+  build:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
